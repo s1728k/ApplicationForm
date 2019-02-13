@@ -161,10 +161,18 @@
 
 <script>
 document.getElementById("images").onchange = function() {
-    document.getElementById("draft").click();
+	if(document.getElementById("spin").value!==""){
+		document.getElementById("draft").click();
+	}else{
+		alert("Please Enter Secret PIN");
+	}
 };
 document.getElementById("attachments").onchange = function() {
-    document.getElementById("draft").click();
+    if(document.getElementById("spin").value!==""){
+		document.getElementById("draft").click();
+	}else{
+		alert("Please Enter Secret PIN");
+	}
 };
 @if($record !== '')
 	$("#owner_name").val("{{$record->owner_name}}");
