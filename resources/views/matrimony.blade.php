@@ -198,7 +198,7 @@
 			<div class="row">
 				<div class="col-md-6"></div>
 				<div class="col-md-6">
-					<input type="submit" class="btn btn-primary" name="submit" value="Save Draft">
+					<input id="draft" type="submit" class="btn btn-primary" name="submit" value="Save Draft">
 					<input type="submit" class="btn btn-primary" name="submit" value="Final Submit">
 				</div>
 			</div>
@@ -215,10 +215,10 @@
 
 <script>
 document.getElementById("images").onchange = function() {
-    document.getElementById("form").submit();
+    document.getElementById("draft").click();
 };
 document.getElementById("attachments").onchange = function() {
-    document.getElementById("form").submit();
+    document.getElementById("draft").click();
 };
 @if($record !== '')
 	$("#name").val("{{$record->name}}");

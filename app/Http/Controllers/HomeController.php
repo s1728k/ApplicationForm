@@ -81,6 +81,7 @@ class HomeController extends Controller
     }
 
     public function application_form(Request $request){
+        \Log::Info('dfsd');
 
         $id = $request->input("serial_no");
         $pin = $request->input("pin");
@@ -106,6 +107,7 @@ class HomeController extends Controller
             \Mail::to('s1728k@gmail.com')->send(new Notification($form_name, $id, $record->spin));
             return view('cru_buttons')->with(['form_name' => $form_name, 'title' => $this->form_class($form_name, 1)]);
         }
+        \Log::Info('dfsd');
 
         if($record->spin == $pin){
 

@@ -144,7 +144,8 @@
 			<div class="row">
 				<div class="col-md-6"></div>
 				<div class="col-md-6">
-					<button type="submit" class="btn btn-primary">Save Draft</button>
+					<input id="draft" type="submit" class="btn btn-primary" name="submit" value="Save Draft">
+					<input type="submit" class="btn btn-primary" name="submit" value="Final Submit">
 				</div>
 			</div>
 			<hr>
@@ -160,10 +161,10 @@
 
 <script>
 document.getElementById("images").onchange = function() {
-    document.getElementById("form").submit();
+    document.getElementById("draft").click();
 };
 document.getElementById("attachments").onchange = function() {
-    document.getElementById("form").submit();
+    document.getElementById("draft").click();
 };
 @if($record !== '')
 	$("#owner_name").val("{{$record->owner_name}}");
